@@ -21,12 +21,12 @@ To get started using the app:
     
 * Accept assessment order
 
-    `curl http://localhost:8051/assessments/{assessmentOrderId}/accept`
+    `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/accept`
     
 * Complete assessment order
 
-    `curl http://localhost:8051/assessments/{assessmentOrderId}/complete`
+    `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/complete`
     
 * Reject assessment order
 
-    `curl http://localhost:8051/assessments/{assessmentOrderId}/reject`
+    `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/reject`
