@@ -43,4 +43,14 @@ app.post('/assessments/:assessmentOrderId/complete', (req, res) => {
         })
 })
 
+app.post('/assessments/:assessmentOrderId/reject', (req, res) => {
+    utils.rejectAssessment(req.params.assessmentOrderId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));

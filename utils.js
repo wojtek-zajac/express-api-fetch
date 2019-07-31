@@ -45,6 +45,19 @@ module.exports = {
                 'X-SmartToken': X_SMART_TOKEN
             }
         })
-            .then(res => res.json())
+        .then(res => res.json())
+    },
+    rejectAssessment: (assesmentOrderId) => {
+        const body = { 'message': 'This is a complete message' };
+        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/reject`, {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Accept': 'application/json',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }
