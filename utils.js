@@ -22,7 +22,7 @@ module.exports = {
         .then(res => res.json())
     },
     acceptAssessment: (assesmentOrderId) => {
-        const body = { 'message': 'This is a message' };
+        const body = { 'message': 'This is an accept message' };
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/accept`, {
             method: 'POST',
             body: JSON.stringify(body),
@@ -33,5 +33,18 @@ module.exports = {
             }
         })
         .then(res => res.json())
+    },
+    completeAssessment: (assesmentOrderId) => {
+        const body = { 'message': 'This is a complete message' };
+        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/complete`, {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Accept': 'application/json',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+            .then(res => res.json())
     }
 }
