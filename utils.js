@@ -160,5 +160,35 @@ module.exports = {
             }
         })
         .then(res => res.json())
+    },
+    updateOffer: (offerId) => {
+        const body = {
+            id: offerId,
+            catalogId: '90210xxx',
+            name: 'Super Oferta',
+            description: 'Tylko dla wybranych',
+            terms: {
+                type: 'BEHAVIORAL_ASSESSMENT',
+                price: {
+                    amount: '0.00',
+                    currencyCode: 'USD'
+                }
+            },
+            availability: {
+                companies: [
+                    '570ce22ae4b0fb73b024cb5c'
+                ]
+            }
+        };
+        return fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}`, {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Accept': 'application/json',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }
