@@ -77,4 +77,14 @@ app.post('/assessments/:assessmentOrderId/comments', (req, res) => {
         })
 })
 
+app.get('/assessments/:assessmentOrderId/comments/:commentId', (req, res) => {
+    utils.getCommentById(req.params.assessmentOrderId, req.params.commentId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));
