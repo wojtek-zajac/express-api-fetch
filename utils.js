@@ -212,5 +212,15 @@ module.exports = {
             }
         })
         .then(res => res.json())
+    },
+    getResults: (assesmentOrderId) => {
+        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }
