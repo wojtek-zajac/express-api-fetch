@@ -47,3 +47,29 @@ To get started using the app:
 * Get comment by ID
 
     `curl http://localhost:8051/assessments/{assessmentOrderId}/comments/{commentId}`
+
+### Offers
+
+* Get offers
+
+    `curl http://localhost:8051/offers`
+
+* Post offers
+
+    `curl -X POST http://localhost:8051/offers`
+    
+* Get offer by ID
+
+    `curl http://localhost:8051/offers/{offerId}`
+    
+* Update offer
+
+    `curl -X POST http://localhost:8051/offers/{offerId}`
+    
+* Submit offer
+
+    `curl -X POST http://localhost:8051/offers/{offerId}/submit`
+    
+* Withdraw offer
+
+    `curl -X POST http://localhost:8051/offers/{offerId}/withdraw`
