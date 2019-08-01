@@ -222,5 +222,25 @@ module.exports = {
             }
         })
         .then(res => res.json())
+    },
+    postResults: (assessmentOrderId) => {
+        const body = {
+            title: 'Results title',
+            description: 'Results description',
+            passed: true,
+            score: '99%',
+            result: 'https://www.google.com',
+            resultType: 'URL'
+        };
+        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assessmentOrderId}/results`, {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Accept': 'application/json',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }
