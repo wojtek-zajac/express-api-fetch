@@ -109,4 +109,14 @@ app.post('/offers', (req, res) => {
         })
 })
 
+app.get('/offers/:offerId', (req, res) => {
+    utils.getOfferById(req.params.offerId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));

@@ -149,6 +149,16 @@ module.exports = {
                 'X-SmartToken': X_SMART_TOKEN
             }
         })
-            .then(res => res.json())
+        .then(res => res.json())
+    },
+    getOfferById: (offerId) => {
+        return fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }
