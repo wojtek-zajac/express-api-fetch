@@ -139,4 +139,14 @@ app.post('/offers/:offerId/submit', (req, res) => {
         })
 })
 
+app.post('/offers/:offerId/withdraw', (req, res) => {
+    utils.withdrawOffer(req.params.offerId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));

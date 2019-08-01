@@ -201,5 +201,16 @@ module.exports = {
             }
         })
         .then(res => res.json())
+    },
+    withdrawOffer: (offerId) => {
+        return fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}/withdraw`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Accept': 'application/json',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }
