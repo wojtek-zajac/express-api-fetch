@@ -105,39 +105,39 @@ module.exports = {
     },
     postOffers: () => {
         const body = {
-            "catalogId": "90210xxx",
-            "name": "Oferta Specjalna 2",
-            "category": "STANDARD",
-            "description": "Tylko dla wybranych",
-            "terms": {
-            "type": "BEHAVIORAL_ASSESSMENT",
-                "price": {
-                "amount": "0.00",
-                    "currencyCode": "USD"
+            catalogId: '90210xxx',
+            name: 'Oferta Specjalna',
+            category: 'STANDARD',
+            description: 'Tylko dla wybranych',
+            terms: {
+            type: 'BEHAVIORAL_ASSESSMENT',
+                price: {
+                amount: '0.00',
+                    currencyCode: 'USD'
                 }
             },
-            "status": "ACTIVE",
-            "availability": {
-                "expirationDate": "2020-02-26T12:50:02.594+0000",
-                "industries": [
+            status: 'ACTIVE',
+            availability: {
+                expirationDate: '2020-02-26T12:50:02.594+0000',
+                industries: [
                     {
-                        "id": "health_wellness_fitness"
+                        id: 'health_wellness_fitness'
                     },
                     {
-                        "id": "graphic_design"
+                        id: 'graphic_design'
                     }
                 ],
-                "locations": [
+                locations: [
                     {
-                        "country": "US",
-                        "region": "California",
-                        "city": "San Francisco"
+                        country: 'US',
+                        region: 'California',
+                        city: 'San Francisco'
                     }
                 ],
-                "companies": [
-                    "570ce22ae4b0fb73b024cb5c"
+                companies: [
+                    '570ce22ae4b0fb73b024cb5c'
                 ],
-                "specialOffer": "25% OFF"
+                specialOffer: '25% OFF'
             }
         };
         return fetch('https://api.smartrecruiters.com/v1/offers', {
