@@ -73,3 +73,17 @@ To get started using the app:
 * Withdraw offer
 
     `curl -X POST http://localhost:8051/offers/{offerId}/withdraw`
+
+### Results
+
+* Get results
+
+    `curl http://localhost:8051/results/`
+    
+* Post results
+
+    `curl -X POST http://localhost:8051/results/`
+    
+* Get result by ID
+
+    `curl http://localhost:8051/results/{resultId}`
