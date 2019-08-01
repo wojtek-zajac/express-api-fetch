@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const port = 8051;
 
+// ASSESSMENTS
+
 app.get('/assessments', (req, res) => {
     utils.getAssessments()
         .then(data => {
@@ -45,6 +47,18 @@ app.post('/assessments/:assessmentOrderId/complete', (req, res) => {
 
 app.post('/assessments/:assessmentOrderId/reject', (req, res) => {
     utils.rejectAssessment(req.params.assessmentOrderId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
+// COMMENTS
+
+app.get('/assessments/:assessmentOrderId/comments', (req, res) => {
+    utils.getComments(req.params.assessmentOrderId)
         .then(data => {
             res.send({ data })
         })

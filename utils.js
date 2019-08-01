@@ -59,5 +59,15 @@ module.exports = {
             }
         })
         .then(res => res.json())
+    },
+    getComments: (assesmentOrderId) => {
+        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }
