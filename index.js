@@ -87,4 +87,16 @@ app.get('/assessments/:assessmentOrderId/comments/:commentId', (req, res) => {
         })
 })
 
+// OFFERS
+
+app.get('/offers', (req, res) => {
+    utils.getOffers()
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));
