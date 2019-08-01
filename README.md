@@ -11,6 +11,8 @@ To get started using the app:
 
 ## API
 
+### Assessments
+
 * Get all new assessment orders
 
     `curl http://localhost:8051/assessments` 
@@ -30,3 +32,18 @@ To get started using the app:
 * Reject assessment order
 
     `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/reject`
+    
+
+### Comments
+
+* Get comments
+
+    `curl http://localhost:8051/assessments/{assessmentOrderId}/comments`
+    
+* Post comments
+
+    `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/comments`
+    
+* Get comment by ID
+
+    `curl http://localhost:8051/assessments/{assessmentOrderId}/comments/{commentId}`
