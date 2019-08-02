@@ -1,4 +1,6 @@
 const fetch = require('node-fetch');
+const fs = require('fs');
+const FormData = require('form-data');
 const X_SMART_TOKEN = '956f647ea948462695551b2d520471fa'
 module.exports = {
     getAssessments: () => {
@@ -9,7 +11,7 @@ module.exports = {
                 'X-SmartToken': X_SMART_TOKEN
             }
         })
-            .then(res => res.json())
+        .then(res => res.json())
     },
     getAssessmetntById: (assesmentOrderId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}`, {
@@ -101,7 +103,7 @@ module.exports = {
                 'X-SmartToken': X_SMART_TOKEN
             }
         })
-            .then(res => res.json())
+        .then(res => res.json())
     },
     postOffers: () => {
         const body = {
@@ -230,7 +232,7 @@ module.exports = {
             passed: true,
             score: '99%',
             result: 'https://www.google.com',
-            resultType: 'URL'
+            resultType: 'DOCUMENT'
         };
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assessmentOrderId}/results`, {
             method: 'POST',
@@ -260,6 +262,22 @@ module.exports = {
                 'Content-Type': 'application/json',
                 'X-SmartToken': X_SMART_TOKEN
             }
+        })
+        .then(res => res.json())
+    },
+    postAttachments: (assesmentOrderId, resultId) => {
+        const form = new FormData();
+        form.append('attachment', fs.createReadStream('/Users/wojciech/Desktop/Example CVs/Example One Page CV.pdf'));
+        form.append('file', 'kozia dupa');
+        form.append('Content-Type', 'application/pdf');
+        const headers = Object.assign({
+            'Accept': 'application/json',
+            'X-SmartToken': X_SMART_TOKEN
+        }, form.getHeaders())
+        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}/attachments`, {
+            method: 'POST',
+            body: form,
+            headers
         })
         .then(res => res.json())
     }
