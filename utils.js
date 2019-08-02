@@ -302,5 +302,15 @@ module.exports = {
             headers
         })
         .then(res => res.json())
+    },
+    getConfigs: () => {
+        return fetch('https://api.smartrecruiters.com/v1/configs', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-SmartToken': X_SMART_TOKEN
+            }
+        })
+        .then(res => res.json())
     }
 }

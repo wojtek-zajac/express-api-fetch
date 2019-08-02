@@ -223,4 +223,16 @@ app.post('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachm
         })
 })
 
+// CONFIGS
+
+app.get('/configs', (req, res) => {
+    utils.getConfigs()
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));
