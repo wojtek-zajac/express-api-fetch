@@ -235,4 +235,14 @@ app.get('/configs', (req, res) => {
         })
 })
 
+app.post('/configs', (req, res) => {
+    utils.postConfig(req.params.assessmentOrderId, req.params.resultId, req.params.attachmentId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));
