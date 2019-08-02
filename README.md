@@ -105,3 +105,21 @@ To get started using the app:
 * Update attachment
 
     `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/results/{resultId}/attachments/{attachmentId}`
+    
+### Configs
+
+* Get configs
+
+    `curl http://localhost:8051/configs`
+    
+* Post config
+
+    `curl -X POST http://localhost:8051/configs`
+    
+* Get config by ID
+
+    `curl http://localhost:8051/configs/{configId}`
+    
+* Update config
+    
+    `curl -X POST http://localhost:8051/configs/{configId}`
