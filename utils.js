@@ -268,8 +268,6 @@ module.exports = {
     postAttachments: (assesmentOrderId, resultId) => {
         const form = new FormData();
         form.append('attachment', fs.createReadStream('/Users/wojciech/Desktop/Example CVs/Example One Page CV.pdf'));
-        form.append('file', 'kozia dupa');
-        form.append('Content-Type', 'application/pdf');
         const headers = Object.assign({
             'Accept': 'application/json',
             'X-SmartToken': X_SMART_TOKEN
@@ -288,6 +286,20 @@ module.exports = {
                 'Content-Type': 'application/json',
                 'X-SmartToken': X_SMART_TOKEN
             }
+        })
+        .then(res => res.json())
+    },
+    updateAttachment: (assesmentOrderId, resultId, attachmentId) => {
+        const form = new FormData();
+        form.append('attachment', fs.createReadStream('/Users/wojciech/Desktop/Example CVs/to tylko nazwa pliku.pdf'));
+        const headers = Object.assign({
+            'Accept': 'application/json',
+            'X-SmartToken': X_SMART_TOKEN
+        }, form.getHeaders())
+        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}/attachments/${attachmentId}`, {
+            method: 'POST',
+            body: form,
+            headers
         })
         .then(res => res.json())
     }

@@ -213,4 +213,14 @@ app.get('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachme
         })
 })
 
+app.post('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachmentId', (req, res) => {
+    utils.updateAttachment(req.params.assessmentOrderId, req.params.resultId, req.params.attachmentId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
 app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));
