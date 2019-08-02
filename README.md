@@ -87,3 +87,21 @@ To get started using the app:
 * Get result by ID
 
     `curl http://localhost:8051/results/{resultId}`
+    
+### Attachments
+
+* Get attachments
+
+    `curl http://localhost:8051/assessments/{assessmentOrderId}/results/{resultId}/attachments`
+    
+* Post attachment
+
+    `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/results/{resultId}/attachments`
+    
+* Get attachment by ID
+
+    `curl http://localhost:8051/assessments/{assessmentOrderId}/results/{resultId}/attachments/{attachmentId}`
+    
+* Update attachment
+
+    `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/results/{resultId}/attachments/{attachmentId}`
