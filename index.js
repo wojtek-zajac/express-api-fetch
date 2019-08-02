@@ -236,7 +236,7 @@ app.get('/configs', (req, res) => {
 })
 
 app.post('/configs', (req, res) => {
-    utils.postConfig(req.params.assessmentOrderId, req.params.resultId, req.params.attachmentId)
+    utils.postConfig()
         .then(data => {
             res.send({ data })
         })
@@ -247,6 +247,16 @@ app.post('/configs', (req, res) => {
 
 app.get('/configs/:configId', (req, res) => {
     utils.getConfigById(req.params.configId)
+        .then(data => {
+            res.send({ data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+})
+
+app.post('/configs/:configId', (req, res) => {
+    utils.updateConfig(req.params.configId)
         .then(data => {
             res.send({ data })
         })
