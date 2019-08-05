@@ -3,6 +3,10 @@ const express = require('express');
 const app = express();
 const port = 8051;
 
+app.get('/', (req, res) => {
+    res.send('Hello')
+})
+
 // ASSESSMENTS
 
 app.get('/assessments', (req, res) => {
