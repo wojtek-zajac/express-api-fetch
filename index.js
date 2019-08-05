@@ -1,7 +1,7 @@
 const utils = require('./utils.js');
 const express = require('express');
 const app = express();
-const port = 8051;
+const PORT = process.env.PORT || 8051;
 
 app.get('/', (req, res) => {
     res.send('Hello')
@@ -269,4 +269,4 @@ app.post('/configs/:configId', (req, res) => {
         })
 })
 
-app.listen(port, () => console.log(`The express-api-fetch app listening on port ${port}!`));
+app.listen(PORT, () => console.log(`The express-api-fetch app listening on port ${PORT}!`));
