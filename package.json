@@ -4,6 +4,7 @@
   "description": "Fetching data from API with Express.js",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start:watch": "nodemon index.js"
@@ -16,6 +17,8 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "@smartrecruiters/eslint-config": "^4.3.0",
+    "eslint": "^6.1.0",
     "nodemon": "^1.19.1"
   },
   "engines": {

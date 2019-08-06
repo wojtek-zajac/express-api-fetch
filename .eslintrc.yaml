@@ -1,0 +1,4 @@
+extends: '@smartrecruiters/eslint-config/node/main'
+
+globals:
+    angular: false
