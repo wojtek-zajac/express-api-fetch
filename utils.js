@@ -1,7 +1,8 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
 const FormData = require('form-data');
-const X_SMART_TOKEN = '956f647ea948462695551b2d520471fa'
+const X_SMART_TOKEN = '956f647ea948462695551b2d520471fa';
+
 module.exports = {
     getAssessments: () => {
         return fetch('https://api.smartrecruiters.com/v1/assessments?status=NEW&sortDir=asc', {
@@ -13,6 +14,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getAssessmetntById: (assesmentOrderId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}`, {
             method: 'GET',
@@ -23,6 +25,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     acceptAssessment: (assesmentOrderId) => {
         const body = { 'message': 'This is an accept message' };
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/accept`, {
@@ -36,6 +39,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     completeAssessment: (assesmentOrderId) => {
         const body = { 'message': 'This is a complete message' };
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/complete`, {
@@ -49,6 +53,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     rejectAssessment: (assesmentOrderId) => {
         const body = { 'message': 'This is a complete message' };
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/reject`, {
@@ -62,6 +67,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getComments: (assesmentOrderId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
             method: 'GET',
@@ -72,6 +78,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     postComments: (assesmentOrderId) => {
         const body = { 'message': 'This is a comment' };
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
@@ -85,6 +92,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getCommentById: (assesmentOrderId, commentId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments/${commentId}`, {
             method: 'GET',
@@ -95,6 +103,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getOffers: () => {
         return fetch('https://api.smartrecruiters.com/v1/offers', {
             method: 'GET',
@@ -105,6 +114,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     postOffers: () => {
         const body = {
             catalogId: '90210xxx',
@@ -153,6 +163,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getOfferById: (offerId) => {
         return fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}`, {
             method: 'GET',
@@ -163,6 +174,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     updateOffer: (offerId) => {
         const body = {
             id: offerId,
@@ -193,6 +205,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     submitOffer: (offerId) => {
         return fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}/submit`, {
             method: 'POST',
@@ -204,6 +217,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     withdrawOffer: (offerId) => {
         return fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}/withdraw`, {
             method: 'POST',
@@ -215,6 +229,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getResults: (assesmentOrderId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results`, {
             method: 'GET',
@@ -225,6 +240,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     postResults: (assessmentOrderId) => {
         const body = {
             title: 'Results title',
@@ -245,6 +261,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getResultById: (assesmentOrderId, resultId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}`, {
             method: 'GET',
@@ -255,6 +272,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getAttachments: (assesmentOrderId, resultId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}/attachments`, {
             method: 'GET',
@@ -265,6 +283,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     postAttachments: (assesmentOrderId, resultId) => {
         const form = new FormData();
         form.append('attachment', fs.createReadStream('/Users/wojciech/Desktop/Example CVs/Example One Page CV.pdf'));
@@ -279,6 +298,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getAttachmentById: (assesmentOrderId, resultId, attachmentId) => {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}/attachments/${attachmentId}`, {
             method: 'GET',
@@ -289,6 +309,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     updateAttachment: (assesmentOrderId, resultId, attachmentId) => {
         const form = new FormData();
         form.append('attachment', fs.createReadStream('/Users/wojciech/Desktop/Example CVs/to tylko nazwa pliku.pdf'));
@@ -303,6 +324,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getConfigs: () => {
         return fetch('https://api.smartrecruiters.com/v1/configs', {
             method: 'GET',
@@ -313,6 +335,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     postConfig: () => {
         const body = {
             id: 'assessmentNotificationUrl',
@@ -329,6 +352,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     getConfigById: (configId) => {
         return fetch(`https://api.smartrecruiters.com/v1/configs/${configId}`, {
             method: 'GET',
@@ -339,6 +363,7 @@ module.exports = {
         })
         .then(res => res.json())
     },
+
     updateConfig: () => {
         const body = {
             id: 'assessmentNotificationUrl',

@@ -8,7 +8,6 @@ app.get('/', (req, res) => {
 })
 
 // ASSESSMENTS
-
 app.get('/assessments', (req, res) => {
     utils.getAssessments()
         .then(data => {
@@ -60,7 +59,6 @@ app.post('/assessments/:assessmentOrderId/reject', (req, res) => {
 })
 
 // COMMENTS
-
 app.get('/assessments/:assessmentOrderId/comments', (req, res) => {
     utils.getComments(req.params.assessmentOrderId)
         .then(data => {
@@ -92,7 +90,6 @@ app.get('/assessments/:assessmentOrderId/comments/:commentId', (req, res) => {
 })
 
 // OFFERS
-
 app.get('/offers', (req, res) => {
     utils.getOffers()
         .then(data => {
@@ -154,7 +151,6 @@ app.post('/offers/:offerId/withdraw', (req, res) => {
 })
 
 // RESULTS
-
 app.get('/assessments/:assessmentOrderId/results', (req, res) => {
     utils.getResults(req.params.assessmentOrderId)
         .then(data => {
@@ -186,7 +182,6 @@ app.get('/assessments/:assessmentOrderId/results/:resultId', (req, res) => {
 })
 
 // ATTACHMENTS
-
 app.get('/assessments/:assessmentOrderId/results/:resultId/attachments', (req, res) => {
     utils.getAttachments(req.params.assessmentOrderId, req.params.resultId)
         .then(data => {
@@ -228,7 +223,6 @@ app.post('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachm
 })
 
 // CONFIGS
-
 app.get('/configs', (req, res) => {
     utils.getConfigs()
         .then(data => {
