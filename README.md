@@ -1,5 +1,9 @@
 # Fetch API in Express.js app
 
+## Live preview
+
+The application is up and running at https://smart-assessments.herokuapp.com
+
 ## Installation and run
 
 To get started using the app:
