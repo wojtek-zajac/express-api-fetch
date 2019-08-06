@@ -78,15 +78,15 @@ To get started using the app:
 
 * Get results
 
-    `curl http://localhost:8051/results/`
+    `curl http://localhost:8051/assessments/{assessmentOrderId}/results/`
     
 * Post results
 
-    `curl -X POST http://localhost:8051/results/`
+    `curl -X POST http://localhost:8051/assessments/{assessmentOrderId}/results/`
     
 * Get result by ID
 
-    `curl http://localhost:8051/results/{resultId}`
+    `curl http://localhost:8051/assessments/{assessmentOrderId}/results/{resultId}`
     
 ### Attachments
 
