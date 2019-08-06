@@ -14,7 +14,8 @@
   "dependencies": {
     "express": "4.17.1",
     "form-data": "2.5.0",
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.0",
+    "pug": "2.0.4"
   },
   "devDependencies": {
     "@smartrecruiters/eslint-config": "4.3.0",

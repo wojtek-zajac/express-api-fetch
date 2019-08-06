@@ -3,8 +3,14 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8051
 
+app.use(express.static(`${__dirname}/`))
+
+app.set('views', './views')
+
+app.set('view engine', 'pug')
+
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.render('index', {title: 'SmartRecruiters Assessments App'})
 })
 
 // ASSESSMENTS
