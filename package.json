@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "1.7.8",
     "express": "4.17.1",
     "form-data": "2.5.0",
     "node-fetch": "2.6.0",
