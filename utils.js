@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
 const FormData = require('form-data')
-const X_SMART_TOKEN = '956f647ea948462695551b2d520471fa'
+const X_SMART_TOKEN = process.env.X_SMART_TOKEN
 
 module.exports = {
     getAssessments: () => fetch('https://api.smartrecruiters.com/v1/assessments?status=NEW&sortDir=asc', {
