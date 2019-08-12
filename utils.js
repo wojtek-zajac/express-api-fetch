@@ -2,23 +2,26 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 const FormData = require('form-data')
 const X_SMART_TOKEN = process.env.X_SMART_TOKEN
+const getHeaders = {
+    'Content-Type': 'application/json',
+    'X-SmartToken': X_SMART_TOKEN
+}
+const postHeaders = {
+    'Content-Type': 'application/json;charset=UTF-8',
+    Accept: 'application/json',
+    'X-SmartToken': X_SMART_TOKEN
+}
 
 module.exports = {
     getAssessments: () => fetch('https://api.smartrecruiters.com/v1/assessments?status=NEW&sortDir=asc', {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
     getAssessmetntById: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -27,11 +30,7 @@ module.exports = {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/accept`, {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
@@ -41,11 +40,7 @@ module.exports = {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/complete`, {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
@@ -55,21 +50,14 @@ module.exports = {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/reject`, {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
 
     getComments: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -78,30 +66,20 @@ module.exports = {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
 
     getCommentById: (assesmentOrderId, commentId) => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments/${commentId}`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
     getOffers: () => fetch('https://api.smartrecruiters.com/v1/offers', {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -145,21 +123,14 @@ module.exports = {
         return fetch('https://api.smartrecruiters.com/v1/offers', {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
 
     getOfferById: offerId => fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -185,41 +156,26 @@ module.exports = {
         return fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}`, {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
 
     submitOffer: offerId => fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}/submit`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            Accept: 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: postHeaders
     })
         .then(res => res.json()),
 
     withdrawOffer: offerId => fetch(`https://api.smartrecruiters.com/v1/offers/${offerId}/withdraw`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            Accept: 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: postHeaders
     })
         .then(res => res.json()),
 
     getResults: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -235,30 +191,20 @@ module.exports = {
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assessmentOrderId}/results`, {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
 
     getResultById: (assesmentOrderId, resultId) => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
     getAttachments: (assesmentOrderId, resultId) => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}/attachments`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -279,10 +225,7 @@ module.exports = {
 
     getAttachmentById: (assesmentOrderId, resultId, attachmentId) => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}/attachments/${attachmentId}`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -303,10 +246,7 @@ module.exports = {
 
     getConfigs: () => fetch('https://api.smartrecruiters.com/v1/configs', {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -318,21 +258,14 @@ module.exports = {
         return fetch('https://api.smartrecruiters.com/v1/configs', {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     },
 
     getConfigById: configId => fetch(`https://api.smartrecruiters.com/v1/configs/${configId}`, {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-SmartToken': X_SMART_TOKEN
-        }
+        headers: getHeaders
     })
         .then(res => res.json()),
 
@@ -344,11 +277,7 @@ module.exports = {
         return fetch('https://api.smartrecruiters.com/v1/configs', {
             method: 'POST',
             body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                'X-SmartToken': X_SMART_TOKEN
-            }
+            headers: postHeaders
         })
             .then(res => res.json())
     }
