@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
 const FormData = require('form-data')
-const X_SMART_TOKEN = process.env.X_SMART_TOKEN
+const {X_SMART_TOKEN} = process.env
 const getHeaders = {
     'Content-Type': 'application/json',
     'X-SmartToken': X_SMART_TOKEN
