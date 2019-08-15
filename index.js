@@ -30,7 +30,7 @@ app.get('/assessments', (req, res) => {
 })
 
 app.get('/assessments/:assessmentOrderId', (req, res) => {
-    assessmentService.getAssessmetntById(req.params.assessmentOrderId)
+    assessmentService.getAssessmentById(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })

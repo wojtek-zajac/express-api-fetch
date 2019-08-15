@@ -17,7 +17,7 @@ module.exports = {
     })
         .then(res => res.json()),
 
-    getAssessmetntById: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}`, {
+    getAssessmentById: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}`, {
         method: 'GET',
         headers: getHeaders
     })
