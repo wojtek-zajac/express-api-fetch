@@ -3,7 +3,7 @@ const commentService = require('./services/comment-service')
 const offerService = require('./services/offer-service')
 const resultService = require('./services/result-service')
 const attachmentService = require('./services/attachment-service')
-const utils = require('./utils.js')
+const configService = require('./services/config-service')
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8051
@@ -235,7 +235,7 @@ app.post('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachm
 
 // CONFIGS
 app.get('/configs', (req, res) => {
-    utils.getConfigs()
+    configService.getConfigs()
         .then(data => {
             res.send({data})
         })
@@ -245,7 +245,7 @@ app.get('/configs', (req, res) => {
 })
 
 app.post('/configs', (req, res) => {
-    utils.postConfig()
+    configService.postConfig()
         .then(data => {
             res.send({data})
         })
@@ -255,7 +255,7 @@ app.post('/configs', (req, res) => {
 })
 
 app.get('/configs/:configId', (req, res) => {
-    utils.getConfigById(req.params.configId)
+    configService.getConfigById(req.params.configId)
         .then(data => {
             res.send({data})
         })
@@ -265,7 +265,7 @@ app.get('/configs/:configId', (req, res) => {
 })
 
 app.post('/configs/:configId', (req, res) => {
-    utils.updateConfig(req.params.configId)
+    configService.updateConfig(req.params.configId)
         .then(data => {
             res.send({data})
         })
