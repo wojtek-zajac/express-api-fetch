@@ -1,5 +1,6 @@
 const assessmentService = require('./services/assessment-service')
 const commentService = require('./services/comment-service')
+const offerService = require('./services/offer-service')
 const utils = require('./utils.js')
 const express = require('express')
 const app = express()
@@ -99,7 +100,7 @@ app.get('/assessments/:assessmentOrderId/comments/:commentId', (req, res) => {
 
 // OFFERS
 app.get('/offers', (req, res) => {
-    utils.getOffers()
+    offerService.getOffers()
         .then(data => {
             res.send({data})
         })
@@ -109,7 +110,7 @@ app.get('/offers', (req, res) => {
 })
 
 app.post('/offers', (req, res) => {
-    utils.postOffers()
+    offerService.postOffers()
         .then(data => {
             res.send({data})
         })
@@ -119,7 +120,7 @@ app.post('/offers', (req, res) => {
 })
 
 app.get('/offers/:offerId', (req, res) => {
-    utils.getOfferById(req.params.offerId)
+    offerService.getOfferById(req.params.offerId)
         .then(data => {
             res.send({data})
         })
@@ -129,7 +130,7 @@ app.get('/offers/:offerId', (req, res) => {
 })
 
 app.post('/offers/:offerId', (req, res) => {
-    utils.updateOffer(req.params.offerId)
+    offerService.updateOffer(req.params.offerId)
         .then(data => {
             res.send({data})
         })
@@ -139,7 +140,7 @@ app.post('/offers/:offerId', (req, res) => {
 })
 
 app.post('/offers/:offerId/submit', (req, res) => {
-    utils.submitOffer(req.params.offerId)
+    offerService.submitOffer(req.params.offerId)
         .then(data => {
             res.send({data})
         })
@@ -149,7 +150,7 @@ app.post('/offers/:offerId/submit', (req, res) => {
 })
 
 app.post('/offers/:offerId/withdraw', (req, res) => {
-    utils.withdrawOffer(req.params.offerId)
+    offerService.withdrawOffer(req.params.offerId)
         .then(data => {
             res.send({data})
         })
