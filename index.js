@@ -2,6 +2,7 @@ const assessmentService = require('./services/assessment-service')
 const commentService = require('./services/comment-service')
 const offerService = require('./services/offer-service')
 const resultService = require('./services/result-service')
+const attachmentService = require('./services/attachment-service')
 const utils = require('./utils.js')
 const express = require('express')
 const app = express()
@@ -193,7 +194,7 @@ app.get('/assessments/:assessmentOrderId/results/:resultId', (req, res) => {
 
 // ATTACHMENTS
 app.get('/assessments/:assessmentOrderId/results/:resultId/attachments', (req, res) => {
-    utils.getAttachments(req.params.assessmentOrderId, req.params.resultId)
+    attachmentService.getAttachments(req.params.assessmentOrderId, req.params.resultId)
         .then(data => {
             res.send({data})
         })
@@ -203,7 +204,7 @@ app.get('/assessments/:assessmentOrderId/results/:resultId/attachments', (req, r
 })
 
 app.post('/assessments/:assessmentOrderId/results/:resultId/attachments', (req, res) => {
-    utils.postAttachments(req.params.assessmentOrderId, req.params.resultId)
+    attachmentService.postAttachments(req.params.assessmentOrderId, req.params.resultId)
         .then(data => {
             res.send({data})
         })
@@ -213,7 +214,7 @@ app.post('/assessments/:assessmentOrderId/results/:resultId/attachments', (req, 
 })
 
 app.get('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachmentId', (req, res) => {
-    utils.getAttachmentById(req.params.assessmentOrderId, req.params.resultId, req.params.attachmentId)
+    attachmentService.getAttachmentById(req.params.assessmentOrderId, req.params.resultId, req.params.attachmentId)
         .then(data => {
             res.send({data})
         })
@@ -223,7 +224,7 @@ app.get('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachme
 })
 
 app.post('/assessments/:assessmentOrderId/results/:resultId/attachments/:attachmentId', (req, res) => {
-    utils.updateAttachment(req.params.assessmentOrderId, req.params.resultId, req.params.attachmentId)
+    attachmentService.updateAttachment(req.params.assessmentOrderId, req.params.resultId, req.params.attachmentId)
         .then(data => {
             res.send({data})
         })
