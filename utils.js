@@ -13,28 +13,6 @@ const postHeaders = {
 }
 
 module.exports = {
-    getComments: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
-        method: 'GET',
-        headers: getHeaders
-    })
-        .then(res => res.json()),
-
-    postComments: assesmentOrderId => {
-        const body = {message: 'This is a comment'}
-        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: postHeaders
-        })
-            .then(res => res.json())
-    },
-
-    getCommentById: (assesmentOrderId, commentId) => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments/${commentId}`, {
-        method: 'GET',
-        headers: getHeaders
-    })
-        .then(res => res.json()),
-
     getOffers: () => fetch('https://api.smartrecruiters.com/v1/offers', {
         method: 'GET',
         headers: getHeaders

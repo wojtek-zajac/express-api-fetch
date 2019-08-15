@@ -1,5 +1,6 @@
-const utils = require('./utils.js')
 const assessmentService = require('./services/assessment-service')
+const commentService = require('./services/comment-service')
+const utils = require('./utils.js')
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8051
@@ -67,7 +68,7 @@ app.post('/assessments/:assessmentOrderId/reject', (req, res) => {
 
 // COMMENTS
 app.get('/assessments/:assessmentOrderId/comments', (req, res) => {
-    utils.getComments(req.params.assessmentOrderId)
+    commentService.getComments(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })
@@ -77,7 +78,7 @@ app.get('/assessments/:assessmentOrderId/comments', (req, res) => {
 })
 
 app.post('/assessments/:assessmentOrderId/comments', (req, res) => {
-    utils.postComments(req.params.assessmentOrderId)
+    commentService.postComments(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })
@@ -87,7 +88,7 @@ app.post('/assessments/:assessmentOrderId/comments', (req, res) => {
 })
 
 app.get('/assessments/:assessmentOrderId/comments/:commentId', (req, res) => {
-    utils.getCommentById(req.params.assessmentOrderId, req.params.commentId)
+    commentService.getCommentById(req.params.assessmentOrderId, req.params.commentId)
         .then(data => {
             res.send({data})
         })
