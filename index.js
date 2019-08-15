@@ -1,4 +1,5 @@
 const utils = require('./utils.js')
+const assessmentService = require('./services/assessment-service')
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8051
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
 
 // ASSESSMENTS
 app.get('/assessments', (req, res) => {
-    utils.getAssessments()
+    assessmentService.getAssessments()
         .then(data => {
             res.send({data})
         })
@@ -25,7 +26,7 @@ app.get('/assessments', (req, res) => {
 })
 
 app.get('/assessments/:assessmentOrderId', (req, res) => {
-    utils.getAssessmetntById(req.params.assessmentOrderId)
+    assessmentService.getAssessmetntById(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })
@@ -35,7 +36,7 @@ app.get('/assessments/:assessmentOrderId', (req, res) => {
 })
 
 app.post('/assessments/:assessmentOrderId/accept', (req, res) => {
-    utils.acceptAssessment(req.params.assessmentOrderId)
+    assessmentService.acceptAssessment(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })
@@ -45,7 +46,7 @@ app.post('/assessments/:assessmentOrderId/accept', (req, res) => {
 })
 
 app.post('/assessments/:assessmentOrderId/complete', (req, res) => {
-    utils.completeAssessment(req.params.assessmentOrderId)
+    assessmentService.completeAssessment(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })
@@ -55,7 +56,7 @@ app.post('/assessments/:assessmentOrderId/complete', (req, res) => {
 })
 
 app.post('/assessments/:assessmentOrderId/reject', (req, res) => {
-    utils.rejectAssessment(req.params.assessmentOrderId)
+    assessmentService.rejectAssessment(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })

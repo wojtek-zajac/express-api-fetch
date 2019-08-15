@@ -13,48 +13,6 @@ const postHeaders = {
 }
 
 module.exports = {
-    getAssessments: () => fetch('https://api.smartrecruiters.com/v1/assessments?status=NEW&sortDir=asc', {
-        method: 'GET',
-        headers: getHeaders
-    })
-        .then(res => res.json()),
-
-    getAssessmetntById: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}`, {
-        method: 'GET',
-        headers: getHeaders
-    })
-        .then(res => res.json()),
-
-    acceptAssessment: assesmentOrderId => {
-        const body = {message: 'This is an accept message'}
-        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/accept`, {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: postHeaders
-        })
-            .then(res => res.json())
-    },
-
-    completeAssessment: assesmentOrderId => {
-        const body = {message: 'This is a complete message'}
-        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/complete`, {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: postHeaders
-        })
-            .then(res => res.json())
-    },
-
-    rejectAssessment: assesmentOrderId => {
-        const body = {message: 'This is a complete message'}
-        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/reject`, {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: postHeaders
-        })
-            .then(res => res.json())
-    },
-
     getComments: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/comments`, {
         method: 'GET',
         headers: getHeaders
