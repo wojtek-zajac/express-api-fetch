@@ -1,6 +1,7 @@
 const assessmentService = require('./services/assessment-service')
 const commentService = require('./services/comment-service')
 const offerService = require('./services/offer-service')
+const resultService = require('./services/result-service')
 const utils = require('./utils.js')
 const express = require('express')
 const app = express()
@@ -161,7 +162,7 @@ app.post('/offers/:offerId/withdraw', (req, res) => {
 
 // RESULTS
 app.get('/assessments/:assessmentOrderId/results', (req, res) => {
-    utils.getResults(req.params.assessmentOrderId)
+    resultService.getResults(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })
@@ -171,7 +172,7 @@ app.get('/assessments/:assessmentOrderId/results', (req, res) => {
 })
 
 app.post('/assessments/:assessmentOrderId/results', (req, res) => {
-    utils.postResults(req.params.assessmentOrderId)
+    resultService.postResults(req.params.assessmentOrderId)
         .then(data => {
             res.send({data})
         })
@@ -181,7 +182,7 @@ app.post('/assessments/:assessmentOrderId/results', (req, res) => {
 })
 
 app.get('/assessments/:assessmentOrderId/results/:resultId', (req, res) => {
-    utils.getResultById(req.params.assessmentOrderId, req.params.resultId)
+    resultService.getResultById(req.params.assessmentOrderId, req.params.resultId)
         .then(data => {
             res.send({data})
         })

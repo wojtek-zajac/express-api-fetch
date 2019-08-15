@@ -13,35 +13,6 @@ const postHeaders = {
 }
 
 module.exports = {
-    getResults: assesmentOrderId => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results`, {
-        method: 'GET',
-        headers: getHeaders
-    })
-        .then(res => res.json()),
-
-    postResults: assessmentOrderId => {
-        const body = {
-            title: 'Results title',
-            description: 'Results description',
-            passed: true,
-            score: '99%',
-            result: 'https://www.google.com',
-            resultType: 'DOCUMENT'
-        }
-        return fetch(`https://api.smartrecruiters.com/v1/assessments/${assessmentOrderId}/results`, {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: postHeaders
-        })
-            .then(res => res.json())
-    },
-
-    getResultById: (assesmentOrderId, resultId) => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}`, {
-        method: 'GET',
-        headers: getHeaders
-    })
-        .then(res => res.json()),
-
     getAttachments: (assesmentOrderId, resultId) => fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/results/${resultId}/attachments`, {
         method: 'GET',
         headers: getHeaders
