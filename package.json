@@ -2,13 +2,13 @@
   "name": "express-api-fetch",
   "version": "1.0.0",
   "description": "Fetching data from API with Express.js",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "start:watch": "nodemon index.js"
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
