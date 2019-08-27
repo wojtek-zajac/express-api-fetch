@@ -13,5 +13,7 @@ block content
     main(ng-app="srAssessments")
         h1 SmartRecruiters Assessments App
         a(href='https://github.com/wojtek-zajac/express-api-fetch', target='_blank') Git repository
-        assessments-list
-            list-item
+        div
+            button(ng-click="showList = !showList") Assessments
+            assessments-list(ng-show="showList")
+                list-item
