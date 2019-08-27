@@ -4,5 +4,10 @@ angular.module('srAssessments.assessments')
             assessment: '<'
         },
         template:
-            '<p>{{ $ctrl.assessment.id }}</p>'
+            `<div>
+                <p>{{ $ctrl.assessment.status }}</p>
+                <p> {{ $ctrl.assessment.id }}</p>
+                <p>{{ $ctrl.assessment.candidate.firstName }} {{ $ctrl.assessment.candidate.lastName }}</p>
+            </div>
+            <br>`
     })
