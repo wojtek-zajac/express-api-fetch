@@ -2,7 +2,16 @@ extends _layout
 
 block scripts
     script(src="/node_modules/angular/angular.js")
+    script(src="/node_modules/angular-resource/angular-resource.js")
+    script(src="/public/sr-assessments/app.js")
+    script(src="/public/sr-assessments/assessments/list/list.module.js")
+    script(src="/public/sr-assessments/assessments/list/list.controller.js")
+    script(src="/public/sr-assessments/assessments/list/list.component.js")
+    script(src="/public/sr-assessments/assessments/list-item/list-item.component.js")
 
 block content
-    h1 SmartRecruiters Assessments App
-    a(href='https://github.com/wojtek-zajac/express-api-fetch', target='_blank') Git repository
+    main(ng-app="srAssessments")
+        h1 SmartRecruiters Assessments App
+        a(href='https://github.com/wojtek-zajac/express-api-fetch', target='_blank') Git repository
+        assessments-list
+            list-item
