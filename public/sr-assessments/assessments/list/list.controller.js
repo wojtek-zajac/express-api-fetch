@@ -8,8 +8,6 @@ function AssessmentsListCtrl($resource) {
     resource.get().$promise
         .then(response => {
             ctrl.assessments = response.data.content
-
-            console.log(response.data.content)
         }, () => {
             /* eslint-disable no-undef */
             alert('Something went wrong... Please try again later.')
