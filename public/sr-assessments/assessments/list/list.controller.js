@@ -3,7 +3,7 @@ angular.module('srAssessments.assessments')
 
 function AssessmentsListCtrl($resource) {
     const ctrl = this
-    const resource = $resource('http://localhost:8051/assessments')
+    const resource = $resource('/assessments')
 
     resource.get().$promise
         .then(response => {

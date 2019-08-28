@@ -3,7 +3,7 @@ angular.module('srAssessments.configs')
 
 function ConfigsListCtrl($resource) {
     const ctrl = this
-    const resource = $resource('http://localhost:8051/configs')
+    const resource = $resource('/configs')
 
     resource.get().$promise
         .then(response => {
