@@ -1,1 +1,4 @@
-angular.module('srAssessments', ['srAssessments.assessments', 'srAssessments.offers'])
+angular.module('srAssessments', [
+    'srAssessments.assessments',
+    'srAssessments.offers',
+    'srAssessments.configs'])
