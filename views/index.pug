@@ -18,9 +18,9 @@ block content
         h1 SmartRecruiters Assessments App
         a(href='https://github.com/wojtek-zajac/express-api-fetch', target='_blank') Git repository
         div
-            button(ng-click="showList = !showList") Assessments
-            assessments-list(ng-show="showList")
-                list-item
+            button(ng-click="showAssessmentsList = !showAssessmentsList") Assessments
+            assessments-list(ng-show="showAssessmentsList")
+                list-assessment-item
         div
             button(ng-click="showOffersList = !showOffersList") Offers
             offers-list(ng-show="showOffersList")

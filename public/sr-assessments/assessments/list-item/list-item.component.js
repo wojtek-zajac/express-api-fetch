@@ -1,5 +1,5 @@
 angular.module('srAssessments.assessments')
-    .component('listItem', {
+    .component('listAssessmentItem', {
         bindings: {
             assessment: '<'
         },
