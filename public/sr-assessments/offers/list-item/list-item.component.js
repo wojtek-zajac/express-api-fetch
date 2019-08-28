@@ -1,5 +1,5 @@
 angular.module('srAssessments.offers')
-    .component('listItem', {
+    .component('listOfferItem', {
         bindings: {
             offer: '<'
         },
@@ -7,7 +7,7 @@ angular.module('srAssessments.offers')
             `<div>
                 <p>{{ $ctrl.offer.status }}</p>
                 <p> {{ $ctrl.offer.id }}</p>
-                <p>{{ $ctrl.offer.candidate.name }}</p>
+                <p>{{ $ctrl.offer.name }}</p>
             </div>
             <br>`
     })
