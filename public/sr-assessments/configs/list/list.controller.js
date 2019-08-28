@@ -10,7 +10,7 @@ function ConfigsListCtrl($resource) {
             ctrl.configs = response.data.content
         }, () => {
             /* eslint-disable no-undef */
-            alert('Something went wrong... Please try again later.')
+            alert('Could not fetch configs... Please try again later.')
             /* eslint-enable no-undef */
         })
 }
