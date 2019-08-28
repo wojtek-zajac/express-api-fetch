@@ -19,3 +19,7 @@ block content
             button(ng-click="showConfigsList = !showConfigsList") Configs
             configs-list(ng-show="showConfigsList")
                 list-config-item
+        div
+            button(ng-click="showCommentsList = !showCommentsList") Comments
+            comments-list(ng-show="showCommentsList")
+                list-comment-item
