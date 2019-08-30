@@ -23,3 +23,7 @@ block content
             button(ng-click="showCommentsList = !showCommentsList") GET Comments
             comments-list(ng-show="showCommentsList")
                 list-comment-item
+        div
+            button(ng-click="showResultsList = !showResultsList") GET Results
+            results-list(ng-show="showResultsList")
+                list-result-item
