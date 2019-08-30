@@ -7,27 +7,46 @@ block content
     main(ng-app="srAssessments")
         h1 SmartRecruiters Assessments App
         a(href='https://github.com/wojtek-zajac/express-api-fetch', target='_blank') Git repository
+        hr
         div
             button(ng-click="showAssessmentsList = !showAssessmentsList") GET Assessments
             assessments-list(ng-show="showAssessmentsList")
                 list-assessment-item
+            div(ng-controller="GoToCtrl")
+                button(ng-click="goTo('/assessments')") GET JSON Assessments
+            hr
         div
             button(ng-click="showOffersList = !showOffersList") GET Offers
             offers-list(ng-show="showOffersList")
                 list-offer-item
+            div(ng-controller="GoToCtrl")
+                button(ng-click="goTo('/offers')") GET JSON Offers
+            hr
         div
             button(ng-click="showConfigsList = !showConfigsList") GET Configs
             configs-list(ng-show="showConfigsList")
                 list-config-item
+            div(ng-controller="GoToCtrl")
+                button(ng-click="goTo('/configs')") GET JSON Configs
+            hr
         div
             button(ng-click="showCommentsList = !showCommentsList") GET Comments
             comments-list(ng-show="showCommentsList")
                 list-comment-item
+            div(ng-controller="GoToCtrl")
+                button(ng-click="goTo('/assessments/58b055e3e4b029a4a26a6c77/comments')") GET JSON Comments
+            hr
         div
             button(ng-click="showResultsList = !showResultsList") GET Results
             results-list(ng-show="showResultsList")
                 list-result-item
+            div(ng-controller="GoToCtrl")
+                button(ng-click="goTo('/assessments/58b055e3e4b029a4a26a6c77/results')") GET JSON Results
+            hr
         div
             button(ng-click="showAttachmentsList = !showAttachmentsList") GET Attachments
             attachments-list(ng-show="showAttachmentsList")
                 list-attachment-item
+            div(ng-controller="GoToCtrl")
+                button(ng-click="goTo('/assessments/58b055e3e4b029a4a26a6c77/results/5d4354bc9985c62db17fcba3/attachments')") GET JSON Attachments
+            hr

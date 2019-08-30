@@ -4,4 +4,5 @@ angular.module('srAssessments', [
     'srAssessments.configs',
     'srAssessments.comments',
     'srAssessments.results',
-    'srAssessments.attachments'])
+    'srAssessments.attachments',
+    'srAssessments.goTo'])
