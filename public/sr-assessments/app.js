@@ -3,4 +3,5 @@ angular.module('srAssessments', [
     'srAssessments.offers',
     'srAssessments.configs',
     'srAssessments.comments',
-    'srAssessments.results'])
+    'srAssessments.results',
+    'srAssessments.attachments'])
