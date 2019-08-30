@@ -6,7 +6,7 @@ angular.module('srAssessments.offers')
         template:
             `<div>
                 <p>{{ $ctrl.offer.status }}</p>
-                <p> {{ $ctrl.offer.id }}</p>
+                <p>{{ $ctrl.offer.id }}</p>
                 <p>{{ $ctrl.offer.name }}</p>
             </div>
             <br>`

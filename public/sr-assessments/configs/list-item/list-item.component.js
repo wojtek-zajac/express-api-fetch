@@ -6,7 +6,7 @@ angular.module('srAssessments.configs')
         template:
             `<div>
                 <p>{{ $ctrl.config.id }}</p>
-                <p> {{ $ctrl.config.value }}</p>
+                <p>{{ $ctrl.config.value }}</p>
             </div>
             <br>`
     })

@@ -6,7 +6,7 @@ angular.module('srAssessments.comments')
         template:
             `<div>
                 <p>{{ $ctrl.comment.id }}</p>
-                <p> {{ $ctrl.comment.message }}</p>
+                <p>{{ $ctrl.comment.message }}</p>
             </div>
             <br>`
     })
