@@ -1,1 +1,1 @@
-angular.module('srInlineAssessment', ['srInlineAssessment.test']);
+angular.module('srInlineAssessment', ['srInlineAssessment.test'])
