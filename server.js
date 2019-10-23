@@ -4,11 +4,15 @@ const offerService = require('./services/offer-service')
 const resultService = require('./services/result-service')
 const attachmentService = require('./services/attachment-service')
 const configService = require('./services/config-service')
+const inlineAssessmentService = require('./services/inline-assessment-service')
+
 const express = require('express')
 const app = express()
+const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 8051
 
 app.use(express.static(`${__dirname}/`))
+app.use(bodyParser.json())
 
 app.set('views', './views')
 app.set('styles', './styles')
@@ -278,5 +282,13 @@ app.post('/configs/:configId', (req, res) => {
             res.send(err)
         })
 })
+
+app.post('/inline-assessment/order', (req, res) => {
+    inlineAssessmentService.orderAssessment(req, res)
+});
+
+app.post('/inline-assessment/submit/:applicationOperationId', (req, res) => {
+    inlineAssessmentService.submitResult(req, res)
+});
 
 app.listen(PORT, () => console.log(`The express-api-fetch app listening on port ${PORT}!`))
