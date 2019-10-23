@@ -6,14 +6,13 @@ block scripts
     script(src="/public/sr-assessments/inline-assessment/test.module.js")
     script(src="/public/sr-assessments/inline-assessment/test.component.js")
     script(src="/public/sr-assessments/inline-assessment/test.controller.js")
-    script(src="/public/sr-assessments/inline-assessment/app.js")
 
 block head
     link(rel='stylesheet' href='/styles/inline-assessment.css')
     title Quick HTML test
 
 block content
-    main(ng-app="srInlineAssessment", ng-controller="QuickTestCtrl")
+    main(ng-app="srInlineAssessment.test", ng-controller="QuickTestCtrl")
         h1.inline-assessment-title Quick HTML test
         h2 1. What does HTML stand for?
         br
