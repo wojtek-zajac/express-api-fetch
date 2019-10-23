@@ -11,12 +11,17 @@ const PORT = process.env.PORT || 8051
 app.use(express.static(`${__dirname}/`))
 
 app.set('views', './views')
+app.set('styles', './styles')
 
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
     res.render('index', {title: 'SmartRecruiters Assessments App'})
 })
+
+app.get('/inline-assessment/:applicationOperationId', (req, res) => {
+    res.render('inline-assessment/index', {title: 'Quick HTML test'})
+});
 
 // ASSESSMENTS
 app.get('/assessments', (req, res) => {
