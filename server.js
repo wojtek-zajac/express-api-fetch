@@ -8,7 +8,7 @@ const inlineAssessmentService = require('./services/inline-assessment-service')
 
 const express = require('express')
 const app = express()
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 8051
 
 app.use(express.static(`${__dirname}/`))
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.get('/inline-assessment/:applicationOperationId', (req, res) => {
     res.render('inline-assessment/index', {title: 'Quick HTML test'})
-});
+})
 
 // ASSESSMENTS
 app.get('/assessments', (req, res) => {
@@ -283,12 +283,13 @@ app.post('/configs/:configId', (req, res) => {
         })
 })
 
+// INLINE ASSESSMENT
 app.post('/inline-assessment/order', (req, res) => {
     inlineAssessmentService.orderAssessment(req, res)
-});
+})
 
 app.post('/inline-assessment/submit/:applicationOperationId', (req, res) => {
     inlineAssessmentService.submitResult(req, res)
-});
+})
 
-app.listen(PORT, () => console.log(`The express-api-fetch app listening on port ${PORT}!`))
+app.listen(PORT, () => console.log(`The Smart Assessments app is listening on port ${PORT}!`))
