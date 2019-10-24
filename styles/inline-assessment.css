@@ -117,3 +117,25 @@ h2 {
     border: 2px solid #007A2D;
     box-shadow: none;
 }
+
+.result-topbar {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.result-passed {
+    text-align: center;
+    background: green;
+    padding: 10px;
+    color: white;
+}
+
+.result-failed {
+    text-align: center;
+    background: red;
+    padding: 10px;
+    color: white;
+}
