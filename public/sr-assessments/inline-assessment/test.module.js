@@ -1,1 +1,1 @@
-angular.module('srInlineAssessment.test', ['ngResource']);
+angular.module('srInlineAssessment.test', ['ngResource'])

@@ -8,6 +8,7 @@ The application is up and running at https://smart-assessments.herokuapp.com
 
 To get started using the app:
 
+* Use the defined node version with `nvm use`
 * Install all the app dependencies with `npm i`
 * Start a development server with `npm start`
 * Altirnatively, start a live preview server with `npm run start:watch`

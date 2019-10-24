@@ -6,57 +6,51 @@ block scripts
     script(src="/public/sr-assessments/inline-assessment/test.module.js")
     script(src="/public/sr-assessments/inline-assessment/test.component.js")
     script(src="/public/sr-assessments/inline-assessment/test.controller.js")
-    script(src="/public/sr-assessments/inline-assessment/app.js")
 
 block head
     link(rel='stylesheet' href='/styles/inline-assessment.css')
     title Quick HTML test
 
 block content
-    main(ng-app="srInlineAssessment", ng-controller="QuickTestCtrl")
-        h1.inline-assessment-title Quick HTML test
-        h2 1. What does HTML stand for?
-        br
-        label.radio-inline
-            input(type='radio', name='question1', value='1', ng-model="questions.answer_1")
-            span.answer-label Hyper Text Markup Language
-        br
-        label.radio-inline
-            input(type='radio', name='question1', value='2', ng-model="questions.answer_1")
-            span.answer-label Home Tool Markup Language
-        br
-        label.radio-inline
-            input(type='radio', name='question1', value='3', ng-model="questions.answer_1")
-            span.answer-label Hyperlinks and Text Markup Language
-        h2 2. Choose the correct HTML element for the largest heading:
-        br
-        label.radio-inline
-            input(type='radio', name='question2', value='1', ng-model="questions.answer_2")
-            span.answer-label &lt;head&gt;
-        br
-        label.radio-inline
-            input(type='radio', name='question2', value='2', ng-model="questions.answer_2")
-            span.answer-label &lt;h1&gt;
-        br
-        label.radio-inline
-            input(type='radio', name='question2', value='3', ng-model="questions.answer_2")
-            span.answer-label &lt;heading&gt;
-        br
-        label.radio-inline
-            input(type='radio', name='question2', value='4', , ng-model="questions.answer_2")
-            span.answer-label &lt;h6&gt;
-        h2 3. What is the correct HTML element for inserting a line break?
-        br
-        label.radio-inline
-            input(type='radio', name='question3', value='1', ng-model="questions.answer_3")
-            span.answer-label &lt;break&gt;
-        br
-        label.radio-inline
-            input(type='radio', name='question3', value='2', ng-model="questions.answer_3")
-            span.answer-label &lt;lb&gt;
-        br
-        label.radio-inline
-            input(type='radio', name='question3', value='3', ng-model="questions.answer_3")
-            span.answer-label &lt;br&gt;
-        br
-        button.submit-test(ng-click="submitAnswers()") Submit
+    main(ng-app="srInlineAssessment.test", ng-controller="QuickTestCtrl")
+        div.header
+            h1 Quick HTML test
+        div.content.box
+            div.question
+                h2 1. What does HTML stand for?
+                label.label
+                    input(type='radio', name='question1', value='1', ng-model="questions.answer_1")
+                    span Hyper Text Markup Language
+                label.label
+                    input(type='radio', name='question1', value='2', ng-model="questions.answer_1")
+                    span Home Tool Markup Language
+                label.label
+                    input(type='radio', name='question1', value='3', ng-model="questions.answer_1")
+                    span Hyperlinks and Text Markup Language
+            div.question
+                h2 2. Choose the correct HTML element for the largest heading:
+                label.label
+                    input(type='radio', name='question2', value='1', ng-model="questions.answer_2")
+                    span.code &lt;head&gt;
+                label.label
+                    input(type='radio', name='question2', value='2', ng-model="questions.answer_2")
+                    span.code &lt;h1&gt;
+                label.label
+                    input(type='radio', name='question2', value='3', ng-model="questions.answer_2")
+                    span.code &lt;heading&gt;
+                label.label
+                    input(type='radio', name='question2', value='4', , ng-model="questions.answer_2")
+                    span.code &lt;h6&gt;
+            div.question
+                h2 3. What is the correct HTML element for inserting a line break?
+                label.label
+                    input(type='radio', name='question3', value='1', ng-model="questions.answer_3")
+                    span.code &lt;break&gt;
+                label.label
+                    input(type='radio', name='question3', value='2', ng-model="questions.answer_3")
+                    span.code &lt;lb&gt;
+                label.label
+                    input(type='radio', name='question3', value='3', ng-model="questions.answer_3")
+                    span.code &lt;br&gt;
+            div.button-container
+                button.submit-button(ng-click="submitAnswers()") Submit
