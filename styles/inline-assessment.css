@@ -118,6 +118,14 @@ h2 {
     box-shadow: none;
 }
 
+.result-topbar {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
 .result-passed {
     text-align: center;
     background: green;
