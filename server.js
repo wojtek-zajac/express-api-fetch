@@ -27,6 +27,10 @@ app.get('/inline-assessment/:applicationOperationId', (req, res) => {
     res.render('inline-assessment/index', {title: 'Quick HTML test'})
 })
 
+app.get('/inline-assessment-result', (req, res) => {
+    res.render('inline-assessment/result', {passed: req.query.passed})
+})
+
 // ASSESSMENTS
 app.get('/assessments', (req, res) => {
     assessmentService.getAssessments()

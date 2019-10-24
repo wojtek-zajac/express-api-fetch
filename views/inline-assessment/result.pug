@@ -1,0 +1,11 @@
+extends ../_layout
+
+block head
+    link(rel='stylesheet' href='/styles/inline-assessment.css')
+    title Quick HTML test result
+
+block content
+    if passed === 'true'
+        h1.result-passed PASSED
+    else
+        h1.result-failed FAILED

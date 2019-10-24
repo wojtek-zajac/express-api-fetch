@@ -23,7 +23,7 @@ module.exports = {
         })
     },
     submitResult: (req, res) => {
-        const assessmentResult = createAssessmentResult(req.body)
+        const assessmentResult = createAssessmentResult(req.body, req.headers)
         const order = cache.get(req.params.applicationOperationId)
         if (!order) {
             res.sendStatus(400)
@@ -38,16 +38,20 @@ module.exports = {
     }
 }
 
-function createAssessmentResult(answers) {
+function createAssessmentResult(answers, headers) {
     let score = 0
     score += answers.answer_1 === '1'
     score += answers.answer_2 === '2'
     score += answers.answer_3 === '3'
+    const passed = score >= 2;
+    const {host} = headers
     return {
         title: 'Quick HTML test result',
         description: 'Quick HTML test result',
-        passed: score >= 2,
-        score: `${score}/3`
+        passed: passed,
+        score: `${score}/3`,
+        resultType: 'URL',
+        result: `http://${host}/inline-assessment-result?passed=${passed}`
     }
 }
 
