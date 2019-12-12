@@ -139,3 +139,16 @@ h2 {
     padding: 10px;
     color: white;
 }
+
+.active {
+    color: green;
+    font-weight: bolder;
+}
+
+.margin-top--l {
+    margin-top: 10px;
+}
+
+.margin-right--m {
+    margin: 5px;
+}
