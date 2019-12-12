@@ -5,4 +5,5 @@ angular.module('srAssessments', [
     'srAssessments.comments',
     'srAssessments.results',
     'srAssessments.attachments',
-    'srAssessments.goTo'])
+    'srAssessments.goTo',
+    'ui.router'])
