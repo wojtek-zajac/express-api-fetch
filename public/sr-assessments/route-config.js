@@ -3,27 +3,57 @@ angular.module('srAssessments')
         const assessments = {
             name: 'assessments',
             url: '/assessments',
-            template: '<h1>Manage your assessment orders<h1>'
+            template: `<br><hr>
+                <button ng-click="showAssessmentsList = !showAssessmentsList" class="margin-top--l">GET Assessments</button>
+                <assessments-list ng-show="showAssessmentsList">
+                    <list-assessment-item></list-assessment-item>
+                </assessments-list>
+            `
         }
         const results = {
             name: 'results',
             url: '/results',
-            template: '<h1>Manage results</h1>'
+            template: `<br><hr>
+                <button ng-click="showResultsList = !showResultsList" class="margin-top--l">GET Results</button>
+                <results-list ng-show="showResultsList">
+                    <list-result-item></list-result-item>
+                </results-list>
+            `
         }
         const attachments = {
             name: 'attachments',
             url: '/attachments',
-            template: '<h1>Manage update </h1>'
+            template: `<br><hr>
+                <button ng-click="showAttachmentsList = !showAttachmentsList" class="margin-top--l">GET Attachments</button>
+                <attachments-list ng-show="showAttachmentsList">
+                    <list-attachment-item></list-attachment-item>
+                </attachments-list>
+            `
         }
         const comments = {
             name: 'comments',
             url: '/comments',
-            template: '<h1>Manage comments</h1>'
+            template: `<br><hr>
+                <button ng-click="showCommentsList = !showCommentsList" class="margin-top--l">GET Comments</button> 
+                <comments-list ng-show="showCommentsList">
+                    <list-comment-item></list-comment-item>
+                </comments-list>
+            `
         }
         const settings = {
             name: 'settings',
             url: '/settings',
-            template: '<h1>Settings</h1>'
+            template: `<br><hr>
+                <button ng-click="showOffersList = !showOffersList" class="margin-top--l">GET Offers</button>
+                <offers-list ng-show="showOffersList">
+                    <list-offer-item></list-offer-item>
+                </offers-list>
+                <br><hr>
+                <button ng-click="showConfigsList = !showConfigsList" class="margin-top--l">GET Configs</button>
+                <configs-list ng-show="showConfigsList">
+                    <list-config-item></list-config-item>
+                </configs-list>
+            `
         }
 
         $stateProvider.state(assessments);
