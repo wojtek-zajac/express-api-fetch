@@ -205,6 +205,10 @@ app.get('/assessments/:assessmentOrderId/results/:resultId', (req, res) => {
         })
 })
 
+app.get('/assessments/results/video-stream', (req, res) => {
+    resultService.getVideoStreamUrl(req, res)
+})
+
 // ATTACHMENTS
 app.get('/assessments/:assessmentOrderId/results/:resultId/attachments', (req, res) => {
     attachmentService.getAttachments(req.params.assessmentOrderId, req.params.resultId)

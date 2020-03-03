@@ -38,5 +38,11 @@ module.exports = {
         method: 'GET',
         headers: getHeaders
     })
-        .then(res => res.json())
+        .then(res => res.json()),
+
+    getVideoStreamUrl: (req, res) => {
+        res.send({
+            resultURL: 'https://www.youtube.com/watch?v=oUOxvZ59vHI'
+        })
+    }
 }
