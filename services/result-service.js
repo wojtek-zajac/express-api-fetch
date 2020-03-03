@@ -41,6 +41,6 @@ module.exports = {
         .then(res => res.json()),
 
     getVideoStreamUrl: (req, res) => {
-        res.send('https://www.youtube.com/embed/HZeP-ZtW0r4')
+        res.send('https://www.youtube.com/embed/LuZV9kkzscg')
     }
 }
