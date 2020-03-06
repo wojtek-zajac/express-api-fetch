@@ -43,12 +43,12 @@ function createAssessmentResult(answers, headers) {
     score += answers.answer_1 === '1'
     score += answers.answer_2 === '2'
     score += answers.answer_3 === '3'
-    const passed = score >= 2;
+    const passed = score >= 2
     const {host} = headers
     return {
         title: 'Quick HTML test result',
         description: 'Quick HTML test result',
-        passed: passed,
+        passed,
         score: `${score}/3`,
         resultType: 'URL',
         result: `http://${host}/inline-assessment-result?passed=${passed}`

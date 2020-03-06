@@ -1,5 +1,5 @@
 angular.module('srAssessments')
-    .config(function($stateProvider) {
+    .config($stateProvider => {
         const assessments = {
             name: 'assessments',
             url: '/assessments',
@@ -56,9 +56,9 @@ angular.module('srAssessments')
             `
         }
 
-        $stateProvider.state(assessments);
-        $stateProvider.state(results);
-        $stateProvider.state(attachments);
-        $stateProvider.state(comments);
-        $stateProvider.state(settings);
+        $stateProvider.state(assessments)
+        $stateProvider.state(results)
+        $stateProvider.state(attachments)
+        $stateProvider.state(comments)
+        $stateProvider.state(settings)
     })
