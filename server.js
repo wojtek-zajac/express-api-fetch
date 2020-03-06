@@ -4,6 +4,7 @@ const offerService = require('./services/offer-service')
 const resultService = require('./services/result-service')
 const attachmentService = require('./services/attachment-service')
 const configService = require('./services/config-service')
+const notificationService = require('./services/notification-service')
 const inlineAssessmentService = require('./services/inline-assessment-service')
 
 const express = require('express')
@@ -289,6 +290,11 @@ app.post('/configs/:configId', (req, res) => {
         .catch(err => {
             res.send(err)
         })
+})
+
+// HANDLE SR NOTIFICATIONS
+app.post('/notifications', (req, res) => {
+    notificationService.processAssessmentOrder(req, res)
 })
 
 // INLINE ASSESSMENT
