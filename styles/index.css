@@ -1,0 +1,15 @@
+.background--lightblue {
+    background-color: lightsteelblue;
+}
+
+.display--inline-block {
+    display: inline-block;
+}
+
+.width--medium {
+    width: 140px;
+}
+
+.padding--medium {
+    padding: 5px 20px 5px 20px;
+}

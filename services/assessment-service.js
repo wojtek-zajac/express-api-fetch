@@ -11,7 +11,7 @@ const postHeaders = {
 }
 
 module.exports = {
-    getAssessments: () => fetch('https://api.smartrecruiters.com/v1/assessments?status=COMPLETED&sortDir=asc', {
+    getAssessments: () => fetch('https://api.smartrecruiters.com/v1/assessments?status=NEW&sortBy=createDate&sortDir=desc', {
         method: 'GET',
         headers: getHeaders
     })

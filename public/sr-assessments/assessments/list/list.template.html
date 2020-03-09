@@ -1,0 +1,8 @@
+<p>Total found: {{$ctrl.data.totalFound}}</p>
+<p>Showing number: {{$ctrl.data.showingNumber}}</p>
+
+
+<list-assessment-item
+    ng-repeat="assessment in $ctrl.data.assessments",
+    assessment="assessment"
+</list-assessment-item>
