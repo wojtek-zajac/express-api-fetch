@@ -16,8 +16,8 @@ module.exports.sendEmail = (candidate) => {
 
     const mailOptions = {
         from: '"SMART ASSESSMENTS 👻 👻 👻 👻 👻" <janosik.sr@gmail.com>',
-        to: candidate,
-        subject: 'Process env',
+        to: 'w.zajac+test@smartrecruiters.com',
+        subject: `Candidate email ${candidate}`,
         html: `
             <h1>Start the assessment: </h1>
             <div>
