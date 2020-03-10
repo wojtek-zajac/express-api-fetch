@@ -3,14 +3,14 @@ const mailingService = require('./mailing-service')
 
 module.exports = {
     processAssessmentOrder: (req, res) => {
-        let candidate
+        let assessmentOrder
         assessmentService.getAssessmentById(req.body.assessmentOrderId)
             .then(response => {
-                return candidate = response.candidate.email
+                return assessmentOrder = response
             })
             .finally(() => {
-                mailingService.sendEmail(candidate)
-                assessmentService.acceptAssessment(req.body.assessmentOrderId, candidate)
+                mailingService.sendEmail(assessmentOrder)
+                assessmentService.acceptAssessment(req.body.assessmentOrderId, assessmentOrder)
                     .then(response => {
                         res.send(response)
                     })

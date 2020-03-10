@@ -3,7 +3,7 @@ const {EMAIL_SENDER_NAME} = process.env
 const {EMAIL_SENDER_PASS} = process.env
 
 module.exports = {
-    sendEmail: (candidate) => {
+    sendEmail: (assessmentOrder) => {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -17,10 +17,11 @@ module.exports = {
 
         const mailOptions = {
             from: '"SMART ASSESSMENTS 👻 👻 👻 👻 👻" <janosik.sr@gmail.com>',
-            to: 'w.zajac+test@smartrecruiters.com',
-            subject: `Candidate email ${candidate}`,
+            to: assessmentOrder.candidate.email,
+            subject: `Start the test: ${assessmentOrder.offer.name}!`,
             html: `
-            <h1>Start the assessment: </h1>
+            <h1>Hi ${assessmentOrder.candidate.firstName}!</h1>
+            <h2>Start the assessment: </h2>
             <div>
                 <a href="http://www.google.com" target="_blank">CLICK</a>
             </div>`

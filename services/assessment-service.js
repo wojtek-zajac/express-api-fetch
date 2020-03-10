@@ -23,8 +23,8 @@ module.exports = {
     })
         .then(res => res.json()),
 
-    acceptAssessment: (assesmentOrderId, candidate) => {
-        const body = {message: `This is an accept message ${candidate}`}
+    acceptAssessment: (assesmentOrderId, assessmentOrder) => {
+        const body = {message: `Assessment sent to ${assessmentOrder.candidate.firstName} ${assessmentOrder.candidate.lastName} at ${assessmentOrder.candidate.email}`}
         return fetch(`https://api.smartrecruiters.com/v1/assessments/${assesmentOrderId}/accept`, {
             method: 'POST',
             body: JSON.stringify(body),
