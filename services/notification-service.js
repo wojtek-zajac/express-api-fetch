@@ -8,10 +8,8 @@ module.exports = {
             .then(response => {
                 return candidate = response.candidate.email
             })
-            .then((candidate) => {
-                mailingService.sendEmail(candidate)
-            })
             .finally(() => {
+                mailingService.sendEmail(candidate)
                 assessmentService.acceptAssessment(req.body.assessmentOrderId, candidate)
                     .then(response => {
                         res.send(response)
