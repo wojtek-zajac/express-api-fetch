@@ -9,7 +9,7 @@ module.exports = {
         //         candidate = response.candidate.email
         //     })
         //mailingService.sendEmail(candidate)
-        assessmentService.acceptAssessment(req.body.assessmentOrderId, 'TEST')
+        assessmentService.acceptAssessment(req.body.assessmentOrderId)
             .then(response => {
                 res.send(response)
             })
