@@ -10,7 +10,7 @@ module.exports = {
             })
             .finally(() => {
                 mailingService.sendEmail(candidate)
-                assessmentService.acceptAssessment(req.body.assessmentOrderId)
+                assessmentService.acceptAssessment(req.body.assessmentOrderId, candidate)
                     .then(response => {
                         res.send(response)
                     })
