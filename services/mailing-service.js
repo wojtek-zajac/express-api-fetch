@@ -18,13 +18,10 @@ module.exports = {
         const mailOptions = {
             from: '"SMART ASSESSMENTS 👻 👻 👻 👻 👻" <janosik.sr@gmail.com>',
             to: assessmentOrder.candidate.email,
-            subject: `Start the test: ${assessmentOrder.offer.name}!`,
+            subject: `Start the ${assessmentOrder.offer.name}!`,
             html: `
-            <h1>Hi ${assessmentOrder.candidate.firstName}!</h1>
-            <h2>Start the assessment: </h2>
-            <div>
-                <a href="http://www.google.com" target="_blank">CLICK</a>
-            </div>`
+                <h1>Hi ${assessmentOrder.candidate.firstName}!</h1>
+                <h2>Click <a href="http://www.google.com" target="_blank">here</a> to start the assessment.</h2>`
         }
 
         transporter.sendMail(mailOptions, function (err, info) {
