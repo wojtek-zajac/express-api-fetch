@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
     res.render('index', {title: 'SmartRecruiters Assessments App'})
 })
 
+app.get('/quick-test/:assessmentOrderId', (req, res) => {
+    res.render('quick-test/index', {title: 'Quick HTML test'})
+})
+
 app.get('/inline-assessment/:applicationOperationId', (req, res) => {
     res.render('inline-assessment/index', {title: 'Quick HTML test'})
 })

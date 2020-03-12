@@ -6,4 +6,5 @@ angular.module('srAssessments', [
     'srAssessments.results',
     'srAssessments.attachments',
     'srAssessments.goTo',
+    'quickTest',
     'ui.router'])
