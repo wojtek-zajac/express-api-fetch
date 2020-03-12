@@ -21,7 +21,7 @@ module.exports = {
             subject: `Start the ${assessmentOrder.offer.name}!`,
             html: `
                 <h1>Hi ${assessmentOrder.candidate.firstName}!</h1>
-                <h2>Click <a href="http://www.google.com" target="_blank">here</a> to start the assessment.</h2>`
+                <h2>Click <a href="https://smart-assessments.herokuapp.com/quick-test/${assessmentOrder.id}" target="_blank">here</a> to start the assessment.</h2>`
         }
 
         transporter.sendMail(mailOptions, function (err, info) {
