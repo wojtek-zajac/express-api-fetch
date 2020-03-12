@@ -1,22 +1,20 @@
 const nodemailer = require('nodemailer')
-const {EMAIL_SENDER_NAME} = process.env
-const {EMAIL_SENDER_PASS} = process.env
 
 module.exports = {
     sendEmail: (assessmentOrder) => {
+        let testAccount = nodemailer.createTestAccount()
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            service: 'smtp.ethereal.email',
+            port: 587,
+            secure: false,
             auth: {
-                user: EMAIL_SENDER_NAME,
-                pass: EMAIL_SENDER_PASS
-            },
-            tls: {
-                rejectUnauthorized: false
+                user: testAccount.user,
+                pass: testAccount.pass
             }
         })
 
         const mailOptions = {
-            from: '"SMART ASSESSMENTS 👻 👻 👻 👻 👻" <janosik.sr@gmail.com>',
+            from: `"SMART ASSESSMENTS 👻 👻 👻 👻 👻" <${testAccount.user}>`,
             to: assessmentOrder.candidate.email,
             subject: `Start the ${assessmentOrder.offer.name}!`,
             html: `
