@@ -28,6 +28,10 @@ app.get('/quick-test/:assessmentOrderId', (req, res) => {
     res.render('quick-test/index', {title: 'Quick HTML test'})
 })
 
+app.get('/google-tag-manager', (req, res) => {
+    res.render('google-tag-manager/index', {title: 'Google Tag Manager'})
+})
+
 app.get('/inline-assessment/:applicationOperationId', (req, res) => {
     res.render('inline-assessment/index', {title: 'Quick HTML test'})
 })
